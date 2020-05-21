@@ -10,13 +10,15 @@ public class VirtualPet {
     int hunger;
     int thirst;
     int boredom;
+    int tick;
 
-    public VirtualPet(String name, String description, int hunger, int thirst, int boredom) {
+    public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int tick) {
         this.petName = name;
         this.petDescription = description;
         this.hunger = hunger;
         this.thirst = thirst;
         this.boredom = boredom;
+        this.tick = tick;
     }
 
     public String getName() {
