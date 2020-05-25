@@ -32,6 +32,7 @@ public class VirtualPetShelterApp {
         System.out.println("5. Admit a pet");
         System.out.println("6. Quit");
         userAction = input.nextInt();
+        input.nextLine();
 
             if (userAction == 1) {
                 myShelter.feedAll();
@@ -43,26 +44,24 @@ public class VirtualPetShelterApp {
                 System.out.println("Their thirst decreased by 5!");
             }else if (userAction == 3) {
                 System.out.println("Which pet would you like to play with?");
-                System.out.println();
                 myShelter.getAllNames();
-                System.out.println();
                 String userInput = input.nextLine();
-                System.out.println();
                 System.out.println("You played with " + userInput + "!");
                 System.out.println(userInput + "'s boredom decreased by 5!");
                 myShelter.playWithOnePet(userInput);
             }else if (userAction == 4) {
                 System.out.println("You would like to adopt a pet. Which pet would you like to adopt?");
                 myShelter.getAllNames();
-                String userInput2 = input.nextLine();
-                System.out.println("Thank you for adopting " + userInput2);
-                myShelter.adopt(myShelter.findPetName(userInput2));
+                String userInput = input.nextLine();
+                System.out.println("Thank you for adopting " + userInput);
+                myShelter.adopt(myShelter.findPetName(userInput));
             }else if (userAction == 5) {
                 System.out.println("You would like to admit a pet. What is the name of your pet?");
-                String userInput3 = input.nextLine();
-                input.nextLine();
-                myShelter.admit(myShelter.findPetName(userInput3));
-                System.out.println("We will take good care of " + userInput3);
+                String userInput = input.nextLine();
+                System.out.println("What kind of animal is this?");
+                String petType = input.nextLine();
+                myShelter.admit(new VirtualPet(userInput, petType, 10, 10, 10, 1 ));
+                System.out.println("We will take good care of " + userInput);
             }else if (userAction == 6) {
                 System.out.println("");
                 System.out.println("Thank you for your help today! Goodbye.");
