@@ -9,15 +9,6 @@ import org.assertj.core.api.Assertions;
 
 public class VirtualPetTest {
 
-
-
-//    @Before
-//    public void setUp() {
-//        underTest = new VirtualPet("Rusty", "smells like a Stargazer lily fresh with morning dew", 10, 10, 10);
-//        foundPet = new VirtualPet("Rusty", "", 10, 10, 10);
-//        // doesn't seem to be working so I'm including it in every test
-
-
     @Test
     public void shouldFindName() {
         VirtualPet underTest = new VirtualPet("Rusty", "", 10, 10, 10,1);

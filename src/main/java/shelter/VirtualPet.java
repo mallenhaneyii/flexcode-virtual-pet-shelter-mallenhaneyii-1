@@ -5,28 +5,38 @@ import java.util.ArrayList;
 
 public class VirtualPet {
 
-    String petName;
-    String petDescription;
+    String name;
+    String description;
     int hunger;
     int thirst;
     int boredom;
     int tick;
 
     public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int tick) {
-        this.petName = name;
-        this.petDescription = description;
+        this.name = name;
+        this.description = description;
         this.hunger = hunger;
         this.thirst = thirst;
         this.boredom = boredom;
         this.tick = tick;
     }
 
+    public void feed(int food) { hunger -= food; }
+
+    public void water(int liquid){
+        thirst -= liquid;
+    }
+
+    public void play(int toy){
+        boredom -= toy;
+    }
+
     public String getName() {
-        return petName;
+        return name;
     }
 
     public String getDescription() {
-        return petDescription;
+        return description;
     }
 
     public int getHunger() {
@@ -48,5 +58,9 @@ public class VirtualPet {
         return (hungString + thirString + boreString);
     }
 
-
+    public void tick() {
+        hunger += 2;
+        thirst += 2;
+        boredom++;
+    }
 }
